@@ -1,0 +1,33 @@
+
+$button_background_color: #e2e2e2;
+$button_background_disable_color: #a1c8ff;
+
+$button_font_color: #fff;
+
+.a {
+
+  cursor: pointer;
+
+  display: inline-block;
+
+  background-color: $button_background_color;
+  color: $button_font_color;
+
+  text-align: center;
+
+  min-width: 3rem;
+
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 2px;
+
+}
+
+.a.disable {
+
+  cursor: not-allowed;
+
+  background-color: $button_background_disable_color;
+
+}

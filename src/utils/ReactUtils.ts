@@ -11,7 +11,6 @@ class ReactUtils {
   public static doHtmlElement(ref: React.MutableRefObject<null>, action: (e: HTMLElement) => void) {
 
     const element = this.getHtmlElement(ref);
-    console.log('element', element)
     element && action(element);
   }
 

@@ -1,6 +1,6 @@
 /**
  * <p>
- *   Description: UrlTypeEnum
+ *   Description: HttpSchemeEnum
  * </p>
  * @author c332030
  * @version 1.0

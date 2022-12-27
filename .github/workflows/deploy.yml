@@ -15,6 +15,7 @@ jobs:
   deploy:
     uses: cc332030/node/.github/workflows/deploy.yml@master
     secrets:
+      NODE_VERSION: '18'
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       HOST: ${{ secrets.HOST }}
       PORT: ${{ secrets.PORT }}

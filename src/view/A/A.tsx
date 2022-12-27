@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useRef, useState } from 'react';
 
 import TextArea from 'antd/es/input/TextArea';
 
@@ -11,15 +11,24 @@ import 'css/card.scss';
 import 'css/a-button.scss';
 
 import styles from './A.module.scss';
+import {Button, Space } from 'antd';
+import ReactUtils from "../../utils/ReactUtils";
 
 function A() {
 
   const [value, setValue] = useState('');
   const decodeValue = !value ? '' : decodeURIComponent(value.trim());
 
+  const aButton = useRef(null);
+
   return (
     <div className={ 'body' }>
       <div className = { classList('card', styles.card) }>
+
+        <a ref={ aButton }
+          className={ 'display-none' }
+          href={ !decodeValue ? '#' : decodeValue }
+        />
 
         <TextArea
           className={ classList('textarea', styles.textarea) }
@@ -28,22 +37,26 @@ function A() {
           onChange={ e => setValue(e.target.value)}
         />
 
-        <a href={ decodeValue ? '#' : decodeValue }
-          className={ aClassName(decodeValue) }
-        >{ urlTypeText(decodeValue) }下载</a>
+        <Space wrap
+          size={ 'large' }
+          align={ 'center' }
+          style={{
+            marginTop: '1rem'
+          }}
+        >
+          <Button danger
+            onClick={ () => setValue('') }
+          >清空</Button>
+
+          <Button type={ 'primary' }
+            disabled={ !decodeValue }
+            onClick={ () => ReactUtils.doHtmlElement(aButton, e => e.click())}
+          >{ urlTypeText(decodeValue) }下载</Button>
+        </Space>
 
       </div>
     </div>
   );
-}
-
-
-function aClassName(href: string): string {
-  const classes = ['a'];
-  if(!href) {
-    classes.push('disabled');
-  }
-  return classes.join(' ');
 }
 
 function getHttpScheme(href: string): string | null {

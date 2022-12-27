@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import TextArea from 'antd/es/input/TextArea';
 
-import "enums/HttpSchemeEnum";
+import HttpSchemeEnum from "enums/HttpSchemeEnum";
 
 import { classList } from 'utils/CssUtils';
 

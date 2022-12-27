@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import 'antd/dist/reset.css';
 import './index.css';
+
 import A from './view/A/A';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(

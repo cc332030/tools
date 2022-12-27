@@ -20,4 +20,4 @@ jobs:
       PORT: ${{ secrets.PORT }}
     with:
       node-version: 18
-      remote-path: /home/program/nginx/html/tools2
+      remote-path: /home/program/nginx/html/tools

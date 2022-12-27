@@ -15,6 +15,7 @@ import styles from './A.module.scss';
 function A() {
 
   const [value, setValue] = useState('');
+  const decodeValue = !value ? '' : decodeURIComponent(value.trim());
 
   return (
     <div className={ 'body' }>
@@ -23,25 +24,19 @@ function A() {
         <TextArea
           className={ classList('textarea', styles.textarea) }
           placeholder='请输入链接'
-          value={ value }
-          onChange={ e => setValue(e.target.value) }
+          value={ decodeValue }
+          onChange={ e => setValue(e.target.value)}
         />
 
-        <a href={dealHref(value)}
-          className={ aClassName(value) }
-        >{ urlTypeText(value) }下载</a>
+        <a href={ decodeValue ? '#' : decodeValue }
+          className={ aClassName(decodeValue) }
+        >{ urlTypeText(decodeValue) }下载</a>
 
       </div>
     </div>
   );
 }
 
-function dealHref(href: string): string {
-  if(!href) {
-    return '#';
-  }
-  return decodeURIComponent(href);
-}
 
 function aClassName(href: string): string {
   const classes = ['a'];

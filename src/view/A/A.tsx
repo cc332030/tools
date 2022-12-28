@@ -1,14 +1,14 @@
-import React, {useRef, useState } from 'react';
 
-import TextArea from 'antd/es/input/TextArea';
+import React, {useRef, useState } from 'react';
+import {Button, Card, Space, Input } from 'antd';
 
 import HttpSchemeEnum from "enums/HttpSchemeEnum";
+import ReactUtils from "utils/ReactUtils";
 
 import 'css/body.scss';
 import './A.scss';
 
-import {Button, Card, Space } from 'antd';
-import ReactUtils from "../../utils/ReactUtils";
+const { TextArea } = Input;
 
 function A() {
 

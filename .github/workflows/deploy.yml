@@ -19,5 +19,4 @@ jobs:
       HOST: ${{ secrets.HOST }}
       PORT: ${{ secrets.PORT }}
     with:
-      node-version: 18
       remote-path: /home/program/nginx/html/tools

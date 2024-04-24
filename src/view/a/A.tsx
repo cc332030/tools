@@ -1,12 +1,10 @@
-
-import React, {useRef, useState } from 'react';
-import {Button, Card, Space, Input } from 'antd';
+import React, {useRef, useState} from 'react';
+import {Button, Input, Space} from 'antd';
 
 import HttpSchemeEnum from "enums/HttpSchemeEnum";
 import ReactUtils from "utils/ReactUtils";
 
-import 'css/body.scss';
-import './A.scss';
+import CCard from "../../component/card/CCard";
 
 const { TextArea } = Input;
 
@@ -18,39 +16,42 @@ function A() {
   const aButton = useRef(null);
 
   return (
-    <div className={ 'body' }>
-      <Card bordered={false} hoverable={true}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-        <a ref={ aButton }
-          className={ 'display-none' }
-          href={ !decodeValue ? '#' : decodeValue }
-        />
+    <CCard>
 
-        <TextArea
-          className={ 'textarea' }
-          placeholder='请输入链接'
-          value={ decodeValue }
-          onChange={ e => setValue(e.target.value)}
-        />
+      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+      <a ref={ aButton }
+         className={ 'display-none' }
+         href={ !decodeValue ? '#' : decodeValue }
+      />
 
-        <Space wrap
-          size={ 'large' }
-          align={ 'center' }
-          style={{
-            marginTop: '1rem'
-          }}
-        >
-          <Button danger
-            onClick={ () => setValue('') }
-          >清空</Button>
+      <TextArea
+        className={ 'textarea' }
+        style={{
+          minWidth: '25rem',
+          minHeight: '10rem',
+        }}
+        placeholder='请输入链接'
+        value={ decodeValue }
+        onChange={ e => setValue(e.target.value)}
+      />
 
-          <Button type={ 'primary' }
-            disabled={ !decodeValue }
-            onClick={ () => ReactUtils.doHtmlElement(aButton, e => e.click())}
-          >{ urlTypeText(decodeValue) }下载</Button>
-        </Space>
-      </Card>
-    </div>
+      <Space wrap
+             size={ 'large' }
+             align={ 'center' }
+             style={{
+               marginTop: '1rem'
+             }}
+      >
+        <Button danger
+                onClick={ () => setValue('') }
+        >清空</Button>
+
+        <Button type={ 'primary' }
+                disabled={ !decodeValue }
+                onClick={ () => ReactUtils.doHtmlElement(aButton, e => e.click())}
+        >{ urlTypeText(decodeValue) }下载</Button>
+      </Space>
+    </CCard>
   );
 }
 

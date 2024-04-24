@@ -4,16 +4,15 @@ import ReactDOM from 'react-dom/client';
 import 'antd/dist/reset.css';
 import './index.css';
 
-import A from './view/a/A';
-
 import reportWebVitals from './reportWebVitals';
+import A from "./view/a/A";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <A />
+    <A></A>
   </React.StrictMode>
 );
 

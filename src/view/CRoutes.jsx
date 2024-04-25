@@ -12,7 +12,7 @@ import Proxy from "view/Proxy";
  * @since 2024/4/24
  */
 
-export const allRoutes = {
+export const AllRoutes = {
     "/": <Home />,
     "/proxy": <Proxy />,
     "/extract-url": <ExtractUrl />,
@@ -24,7 +24,7 @@ export default function CRoutes() {
         <BrowserRouter>
           <Routes>
               {
-                  Object.entries(allRoutes).map(([path, view]) => (
+                  Object.entries(AllRoutes).map(([path, view]) => (
                       <Route path={path} element={view}/>
                   ))
               }

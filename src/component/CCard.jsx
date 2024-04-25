@@ -1,7 +1,7 @@
-import React from "react";
 import {Card} from "antd";
 
 import 'css/body.scss';
+import React from "react";
 import './CCard.scss';
 
 /**

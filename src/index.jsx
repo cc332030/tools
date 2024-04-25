@@ -6,7 +6,6 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 import CRoutes from "./view/CRoutes";
-import Home from "./view/Home";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
@@ -14,7 +13,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <CRoutes />
-    <Home />
   </React.StrictMode>
 );
 

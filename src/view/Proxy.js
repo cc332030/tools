@@ -1,14 +1,13 @@
-import React, {useRef, useState} from 'react';
 import {Button, Input, Space} from 'antd';
+import CCard from "component/CCard";
+import HttpScheme from "enums/HttpScheme";
+import React, {useRef, useState} from 'react';
 
-import HttpSchemeEnum from "enums/HttpSchemeEnum";
 import ReactUtils from "utils/ReactUtils";
-
-import CCard from "../../component/card/CCard";
 
 const { TextArea } = Input;
 
-function A() {
+function Proxy() {
 
   const [value, setValue] = useState('');
   const decodeValue = !value ? '' : decodeURIComponent(value.trim());
@@ -55,21 +54,30 @@ function A() {
   );
 }
 
-function getHttpScheme(href: string): string | null {
+/**
+ *
+ * @param href {string}
+ * @returns {string | null}
+ */
+function getHttpScheme(href) {
 
   if(href) {
     const index = href.indexOf(':');
     if(index > 0) {
       const type = href.substring(0, index);
-      // @ts-ignore
-      return HttpSchemeEnum[type];
+      return HttpScheme[type];
     }
   }
 
   return null;
 }
 
-function urlTypeText(href: string): string {
+/**
+ *
+ * @param href {string}
+ * @returns {string}
+ */
+function urlTypeText(href) {
 
   const httpScheme = getHttpScheme(href);
   if(!httpScheme) {
@@ -78,5 +86,4 @@ function urlTypeText(href: string): string {
   return httpScheme + ' ';
 }
 
-
-export default A;
+export default Proxy;

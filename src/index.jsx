@@ -5,14 +5,16 @@ import 'antd/dist/reset.css';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import A from "./view/a/A";
+import CRoutes from "./view/CRoutes";
+import Home from "./view/Home";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root')
 );
 root.render(
   <React.StrictMode>
-    <A></A>
+    <CRoutes />
+    <Home />
   </React.StrictMode>
 );
 

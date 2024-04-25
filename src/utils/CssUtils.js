@@ -1,7 +1,7 @@
 
 class CssUtils {
 
-  public static classList(...classes: Array<string>): string {
+  static classList(...classes) {
     return classes.join(' ');
   }
 

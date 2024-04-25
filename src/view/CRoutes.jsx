@@ -13,10 +13,23 @@ import Proxy from "view/Proxy";
  */
 
 export const AllRoutes = {
-    "/": <Home />,
-    "/proxy": <Proxy />,
-    "/extract-url": <ExtractUrl />,
-    "*": <NotFound />,
+    "/": {
+        name: '首页',
+        view: <Home />,
+    },
+    "/download-proxy": {
+        name: '下载代理',
+        view: <Proxy />
+    },
+    "/extract-url": {
+        name: '',
+        view: <ExtractUrl />,
+    },
+    "*": {
+        name: '404 页面',
+        view: <NotFound />,
+        statusCode: 404
+    },
 }
 
 export default function CRoutes() {
@@ -24,8 +37,8 @@ export default function CRoutes() {
         <BrowserRouter>
           <Routes>
               {
-                  Object.entries(AllRoutes).map(([path, view]) => (
-                      <Route path={path} element={view}/>
+                  Object.entries(AllRoutes).map(([path, data]) => (
+                      <Route path={path} element={data.view}/>
                   ))
               }
           </Routes>

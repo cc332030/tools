@@ -1,6 +1,6 @@
 /**
  * <p>
- *   Description: HttpSchemeEnum
+ *   Description: HttpScheme
  * </p>
  * @author c332030
  * @version 1.0

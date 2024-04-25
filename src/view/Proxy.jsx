@@ -1,6 +1,6 @@
 import {Button, Input, Space} from 'antd';
 import CCard from "component/CCard";
-import HttpScheme from "enums/HttpScheme";
+import HttpScheme from "constant/HttpScheme";
 import React, {useRef, useState} from 'react';
 
 import ReactUtils from "utils/ReactUtils";

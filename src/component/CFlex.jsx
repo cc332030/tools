@@ -11,7 +11,7 @@ export default function CFlex({children}) {
             style={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'flex-start',
+                alignItems: 'center',
                 wrap: 'wrap',
                 gap: '2rem',
 

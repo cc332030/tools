@@ -20,7 +20,7 @@ export default function ExtractUrl() {
             <TextArea
                 className={ 'textarea' }
                 style={{
-                    minWidth: '25rem',
+                    minWidth: '15rem',
                     minHeight: '10rem',
                 }}
                 placeholder='请输入文本'

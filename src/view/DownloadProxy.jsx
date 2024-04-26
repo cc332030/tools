@@ -26,7 +26,7 @@ function DownloadProxy() {
       <TextArea
         className={ 'textarea' }
         style={{
-          minWidth: '25rem',
+          minWidth: '15rem',
           minHeight: '10rem',
         }}
         placeholder='请输入链接'

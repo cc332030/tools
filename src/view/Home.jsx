@@ -21,6 +21,7 @@ export default function Home() {
             {
                 paths.map(path => <>
                     <a
+                        className={'a'}
                         href={path}
                     >
                         <Card

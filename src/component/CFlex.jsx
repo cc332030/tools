@@ -15,7 +15,7 @@ export default function CFlex({children}) {
                 wrap: 'wrap',
                 gap: '2rem',
 
-                height: '100vh',
+                height: '100%',
                 padding: '5rem',
             }}
         >

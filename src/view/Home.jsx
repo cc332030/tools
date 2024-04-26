@@ -1,5 +1,6 @@
 import {Card} from "antd";
 import CFlex from "component/CFlex";
+import Framework from "component/Framework";
 import {AllRoutes} from "view/CRoutes";
 
 /**
@@ -17,25 +18,27 @@ const paths = [
 
 export default function Home() {
     return (
-        <CFlex>
-            {
-                paths.map(path => <>
-                    <a
-                        className={'a'}
-                        href={path}
-                    >
-                        <Card
-                            key={`home-${path}`}
-                            style={{
-                                width: '10rem',
-                                height: '5rem',
-                            }}
+        <Framework>
+            <CFlex>
+                {
+                    paths.map(path => <>
+                        <a
+                            className={'a'}
+                            href={path}
                         >
-                            {AllRoutes[path].name}
-                        </Card>
-                    </a>
-                </>)
-            }
-        </CFlex>
+                            <Card
+                                key={`home-${path}`}
+                                style={{
+                                    width: '10rem',
+                                    height: '5rem',
+                                }}
+                            >
+                                {AllRoutes[path].name}
+                            </Card>
+                        </a>
+                    </>)
+                }
+            </CFlex>
+        </Framework>
     );
 };

@@ -4,7 +4,7 @@ $button_background_disable_color: #a1c8ff;
 
 $button_font_color: #fff;
 
-.a {
+.a-button {
 
   cursor: pointer;
 
@@ -24,7 +24,7 @@ $button_font_color: #fff;
 
 }
 
-.a.disabled {
+.a-button.disabled {
 
   cursor: not-allowed;
 

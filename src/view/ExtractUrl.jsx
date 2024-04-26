@@ -1,7 +1,9 @@
-import {Input, List, Typography} from "antd";
+import {Button, Input, List, message} from "antd";
 import CCard from "component/CCard";
 import Framework from "component/Framework";
 import React, {useState} from "react";
+import {copyToClipboard} from "utils/PageUtils";
+import {extractUrl} from "utils/UrlUtils";
 
 const { TextArea } = Input;
 
@@ -16,14 +18,23 @@ export default function ExtractUrl() {
 
     const [value, setValue] = useState('');
 
+    const urls = extractUrl(value)
+
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const copySuccess = () => {
+        messageApi.info('复制成功!')
+    };
+
     return (
         <Framework>
+            {contextHolder}
             <CCard>
                 <TextArea
                     className={ 'textarea' }
                     style={{
-                        minWidth: '17rem',
-                        width: '30vw',
+                        // minWidth: '17rem',
+                        // width: '30vw',
                         minHeight: '10rem',
                         height: '30vh',
                     }}
@@ -33,10 +44,39 @@ export default function ExtractUrl() {
                 />
                 <List
                     bordered
-                    dataSource={[]}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                    style={{
+                        marginTop: '1rem',
+                        minWidth: '17rem',
+                        width: '30vw',
+                    }}
+                    dataSource={urls}
+                    renderItem={(url) => (
+                        <List.Item
+                            style={{
+                                display: 'flex'
+                            }}
+                            actions={[
+                                <Button
+                                    type={"primary"}
+                                    onClick={() => {
+                                        copyToClipboard(url)
+                                        copySuccess()
+                                    }}
+                                >复制</Button>
+                            ]}
+                        >
+                            <a
+                                href={url}
+                                style={{
+                                    flex: '1',
+                                    display: 'inline-block',
+
+                                    whiteSpace: 'nowrap',
+                                    textOverflow: 'ellipsis',
+
+                                    overflow: 'hidden'
+                                }}
+                            >{url}</a>
                         </List.Item>
                     )}
                 />

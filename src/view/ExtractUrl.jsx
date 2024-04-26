@@ -1,4 +1,4 @@
-import {Input} from "antd";
+import {Input, List, Typography} from "antd";
 import CCard from "component/CCard";
 import React, {useState} from "react";
 
@@ -26,6 +26,15 @@ export default function ExtractUrl() {
                 placeholder='请输入文本'
                 value={ value }
                 onChange={ e => setValue(e.target.value)}
+            />
+            <List
+                bordered
+                dataSource={[]}
+                renderItem={(item) => (
+                    <List.Item>
+                        <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                    </List.Item>
+                )}
             />
         </CCard>
     );

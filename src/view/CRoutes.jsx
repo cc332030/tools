@@ -1,8 +1,8 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import DownloadProxy from "view/DownloadProxy";
 import ExtractUrl from "view/ExtractUrl";
 import Home from "view/Home";
 import NotFound from "view/NotFound";
-import Proxy from "view/Proxy";
 
 /**
  * <p>
@@ -15,19 +15,19 @@ import Proxy from "view/Proxy";
 export const AllRoutes = {
     "/": {
         name: '首页',
-        view: <Home />,
+        view: <Home/>,
     },
     "/download-proxy": {
         name: '下载代理',
-        view: <Proxy />
+        view: <DownloadProxy/>
     },
     "/extract-url": {
-        name: '',
-        view: <ExtractUrl />,
+        name: '提取URL',
+        view: <ExtractUrl/>,
     },
     "*": {
         name: '404 页面',
-        view: <NotFound />,
+        view: <NotFound/>,
         statusCode: 404
     },
 }
@@ -35,13 +35,13 @@ export const AllRoutes = {
 export default function CRoutes() {
     return (
         <BrowserRouter>
-          <Routes>
-              {
-                  Object.entries(AllRoutes).map(([path, data]) => (
-                      <Route path={path} element={data.view}/>
-                  ))
-              }
-          </Routes>
+            <Routes>
+                {
+                    Object.entries(AllRoutes).map(([path, data]) => (
+                        <Route key={path} path={path} element={data.view}/>
+                    ))
+                }
+            </Routes>
         </BrowserRouter>
     );
 };

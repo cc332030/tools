@@ -7,7 +7,7 @@ import ReactUtils from "utils/ReactUtils";
 
 const { TextArea } = Input;
 
-function Proxy() {
+function DownloadProxy() {
 
   const [value, setValue] = useState('');
   const decodeValue = !value ? '' : decodeURIComponent(value.trim());
@@ -86,4 +86,4 @@ function urlTypeText(href) {
   return httpScheme + ' ';
 }
 
-export default Proxy;
+export default DownloadProxy;

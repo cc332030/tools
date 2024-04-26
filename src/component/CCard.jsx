@@ -2,7 +2,7 @@ import {Card} from "antd";
 
 import 'css/body.scss';
 import React from "react";
-import './CCard.scss';
+import 'component/CCard.scss';
 
 /**
  * <p>

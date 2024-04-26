@@ -14,6 +14,7 @@ import {AllRoutes} from "view/CRoutes";
 const paths = [
     "/download-proxy",
     "/extract-url",
+    "/export-book",
 ]
 
 export default function Home() {

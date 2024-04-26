@@ -1,5 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import DownloadProxy from "view/DownloadProxy";
+import ExportBook from "view/ExportBook";
 import ExtractUrl from "view/ExtractUrl";
 import Home from "view/Home";
 import NotFound from "view/NotFound";
@@ -15,15 +16,19 @@ import NotFound from "view/NotFound";
 export const AllRoutes = {
     "/": {
         name: '首页',
-        view: <Home/>,
+        view: <Home />,
     },
     "/download-proxy": {
         name: '下载代理',
-        view: <DownloadProxy/>
+        view: <DownloadProxy />
     },
     "/extract-url": {
         name: '提取URL',
-        view: <ExtractUrl/>,
+        view: <ExtractUrl />,
+    },
+    "/export-book": {
+        name: '导出书籍',
+        view: <ExportBook />,
     },
     "*": {
         name: '404 页面',

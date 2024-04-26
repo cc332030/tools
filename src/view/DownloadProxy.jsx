@@ -28,7 +28,7 @@ function DownloadProxy() {
                 <TextArea
                     className={'textarea'}
                     style={{
-                        minWidth: '15rem',
+                        minWidth: '17rem',
                         width: '30vw',
                         minHeight: '10rem',
                         height: '30vh',

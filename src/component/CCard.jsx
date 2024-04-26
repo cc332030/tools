@@ -10,9 +10,12 @@ import 'component/CCard.scss';
  * @author c332030
  * @since 2024/4/24
  */
-export default function CCard({children}) {
+export default function CCard({children, style}) {
     return (
-        <div className={ 'body' }>
+        <div
+            className={ 'body' }
+            style={style}
+        >
             <Card bordered={false} >
                 {children}
             </Card>

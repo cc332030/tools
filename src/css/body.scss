@@ -12,6 +12,7 @@ body {
 }
 
 $body_padding: 1rem;
+$body_gap: 1rem;
 
 .body {
 
@@ -22,5 +23,8 @@ $body_padding: 1rem;
 
   height: 100%;
   padding: $body_padding;
+
+  flex-wrap: wrap;
+  gap: $body_gap;
 
 }

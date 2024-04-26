@@ -19,7 +19,6 @@ function DownloadProxy() {
         <Framework>
             <CCard>
 
-                {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
                 <a ref={aButton}
                    className={'display-none'}
                    href={!decodeValue ? '#' : decodeValue}

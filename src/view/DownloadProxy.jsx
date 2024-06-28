@@ -11,7 +11,7 @@ const {TextArea} = Input;
 function DownloadProxy() {
 
     const [value, setValue] = useState('');
-    const decodeValue = !value ? '' : decodeURIComponent(value.trim());
+    const decodeValue = !value ? '' : `/proxy?url=${decodeURIComponent(value.trim())}`;
 
     const aButton = useRef(null);
 

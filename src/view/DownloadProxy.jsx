@@ -1,8 +1,9 @@
-import {Button, Input, Space} from 'antd';
+import {Button, Input, message, Space} from 'antd';
 import CCard from "component/CCard";
 import Framework from "component/Framework";
 import HttpScheme from "constant/HttpScheme";
 import React, {useRef, useState} from 'react';
+import {copyToClipboard} from "utils/PageUtils";
 
 import ReactUtils from "utils/ReactUtils";
 
@@ -11,17 +12,25 @@ const {TextArea} = Input;
 function DownloadProxy() {
 
     const [value, setValue] = useState('');
-    const decodeValue = !value ? '' : `/proxy?url=${decodeURIComponent(value.trim())}`;
+    const decodeValue = !value ? '' : decodeURIComponent(value.trim())
+    const proxyUrl = !decodeValue ? decodeValue : `/proxy?url=${decodeValue}`
 
     const aButton = useRef(null);
 
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const copySuccess = () => {
+        messageApi.info('复制成功!')
+    };
+
     return (
         <Framework>
+            {contextHolder}
             <CCard>
 
                 <a ref={aButton}
                    className={'display-none'}
-                   href={!decodeValue ? '#' : decodeValue}
+                   href={!proxyUrl ? '#' : proxyUrl}
                 />
 
                 <TextArea
@@ -47,6 +56,14 @@ function DownloadProxy() {
                     <Button danger
                             onClick={() => setValue('')}
                     >清空</Button>
+
+                    <Button type={'primary'}
+                            disabled={!decodeValue}
+                            onClick={() => {
+                                copyToClipboard(proxyUrl)
+                                copySuccess()
+                            }}
+                    >复制</Button>
 
                     <Button type={'primary'}
                             disabled={!decodeValue}
